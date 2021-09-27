@@ -1,0 +1,591 @@
+import java.util.Scanner;
+public class NumberPalindromeCheck {
+
+ public static void main(String[] args) {
+  Scanner cs=new Scanner(System.in);
+  int num;
+     System.out.println("Enter a number:");
+     num=cs.nextInt();
+     int num1=num;
+     int num2=0;
+     while(num!=0)
+     {
+         int rem=num%10;
+         num/=10;
+         num2=num2*10+rem;
+     }
+
+     if(num1==num2)
+         System.out.println("It is Palindrome");
+     else
+         System.out.println("It is not Palindrome");
+  cs.close();
+ }
+}
+=========================================================
+import java.util.Scanner;
+public class PrimeOrNot {
+
+ public static void main(String[] args) {
+  Scanner cs=new Scanner(System.in);
+  int num,i;
+     System.out.println("Enter a number:");
+     num=cs.nextInt();
+     int count=0;
+     for(i=2;i<=Math.sqrt(num);i++)
+     {
+        if(num%i==0)
+         count++;
+     }
+    if(count==0)
+      System.out.println("It is Prime ");
+    else
+         System.out.println("It is not Prime ");
+  cs.close();
+ }
+}
+============================================
+
+=========================================================
+import java.util.Scanner;
+public class ArmstrongNumberNumberOrNot {
+
+ public static void main(String[] args) {
+  Scanner cs=new Scanner(System.in);
+  int num;
+     System.out.println("Enter a number:");
+     num=cs.nextInt();
+     int num2=num;
+     int sum=0;
+    while(num!=0)
+    {
+        int rem=num%10;
+        num=num/10;
+        sum=sum+rem*rem*rem;
+    }
+    if(sum==num2)
+     System.out.println("It is an Armstrong Number");
+    else
+     System.out.println("It is not an Armstrong Number");
+  cs.close();
+ }
+}
+========================================================
+mport java.util.Scanner;
+public class StrongNumberOrNot {
+
+ public static void main(String[] args) {
+  Scanner cs=new Scanner(System.in);
+   int num;
+      System.out.println("Enter a number:");
+      num=cs.nextInt();
+      int num2=num;
+      int sum=0;
+      int fact=1;
+     while(num!=0)
+     {   fact=1;
+         int rem=num%10;
+         num=num/10;
+         for(int i=1;i<=rem;i++)
+          fact=fact*i;
+         sum=sum+fact;
+     }
+     if(sum==num2)
+      System.out.println("It is a Strong Number");
+     else
+      System.out.println("It is not a Strong Number");
+  cs.close();
+ }
+}
+======================================================================
+mport java.util.Scanner;
+public class PerfectNumberOrNot {
+
+ public static void main(String[] args) {
+  Scanner cs=new Scanner(System.in);
+  int num,i;
+     System.out.println("Enter a number:");
+     num=cs.nextInt();
+     int sum=0;
+     for(i=1;i<num;i++)
+     {
+         if(num%i==0)
+         {
+             sum=sum+i;
+         }
+     }
+    if(sum==num)
+     System.out.println("It is a Perfect Number");
+    else
+     System.out.println("It is not a Perfect Number");
+  cs.close();
+ }
+}
+======================================================
+
+
+
+======================================
+import java.util.Scanner;
+public class FactorialOfNumber {
+
+ public static void main(String[] args) {
+  Scanner cs=new Scanner(System.in);
+   int num;
+      System.out.println("Enter a number:");
+      num=cs.nextInt();
+      int fact=1;
+      for(int i=1;i<=num;i++)
+          fact=fact*i;
+      System.out.println("The factorial is "+fact);
+  cs.close();
+ }
+}
+=============================================================
+
+====================================
+import java.util.Scanner;
+public class NeonNumberOrNot {
+
+ public static void main(String[] args) {
+  Scanner cs=new Scanner(System.in);
+      int num;
+      System.out.println("Enter a number:");
+      num=cs.nextInt();
+      int sqr=num*num;
+      //Sum of digit
+     int sum=0,rem;
+     while(sqr!=0)
+     {
+         rem=sqr%10;
+         sum+=rem;
+         sqr/=10;
+     }
+
+    if(sum==num)
+       System.out.println("It is a Neon Number.");
+     else
+          System.out.println("It is not a Neon Number.");
+   cs.close();
+ }
+}
+==================================================================
+
+=======================================================================
+import java.util.Scanner;
+public class HappyNumberOrNot {
+
+ public static void main(String[] args) {
+  Scanner cs=new Scanner(System.in);
+      int num;
+      System.out.println("Enter a number:");
+      num=cs.nextInt();
+      int sum=0,rem;
+      while(sum!=1 && sum!=4)
+      {
+     sum=0;
+     while(num!=0)
+     {
+         rem=num%10;
+         sum+=(rem*rem);
+         num/=10;
+     }
+     num=sum;
+     }
+    if(sum==1)
+       System.out.println("It is a Happy Number.");
+     else
+          System.out.println("It is an Unhappy Number.");
+   cs.close();
+ }
+}
+==========================================================
+public class ReverseNumber {
+
+	public static void main(String[] args) {
+
+
+		int number = 1234;
+
+		//Number before reverse
+		int numberBeforeReverse = number;
+
+		int reversedNumber = 0;
+		int temp = 0;
+
+		while(number > 0){
+
+			//use modulus operator to strip off the last digit
+			temp = number%10;
+
+			//create the reversed number
+			reversedNumber = reversedNumber * 10 + temp;
+			number = number/10;
+
+		}
+
+		//output the reversed number
+		System.out.println("Number Before Reverse: " + numberBeforeReverse);
+		System.out.println("Number After Reverse: " + reversedNumber);
+	}
+
+}
+===================================================================
+import java.util.Scanner;
+
+public class LeapYear
+{
+
+	public static void main(String[] args) { 
+		System.out.println("Enter Year:");
+		Scanner input = new Scanner(System.in);
+		int year = input.nextInt();
+
+		boolean isLeapYear;
+
+		// divisible by 4
+		isLeapYear = (year % 4 == 0);
+
+		// divisible by 4 and not 100
+		isLeapYear = isLeapYear && (year % 100 != 0);
+
+		// divisible by 4 and not 100 or divisible by 400
+		isLeapYear = isLeapYear || (year % 400 == 0);
+
+		if(isLeapYear){
+			System.out.println("Leap Year");
+		} else{
+			System.out.println("Not a Leap Year");
+		}
+
+       }
+}
+===================================================================
+import java.util.Scanner;
+public class PrimesNumberInRange {
+
+ public static void main(String[] args) {
+       Scanner cs=new Scanner(System.in);
+       int fristnumber, endnumber, i,j;
+       System.out.println("Enter the First number:");
+       fristnumber=cs.nextInt();
+       System.out.println("Enter the Last number:");
+       endnumber=cs.nextInt();
+ System.out.println("Prime numbers between "+fristnumber+" and "+endnumber+" are:");
+        for (j =fristnumber; j <=endnumber; j++)
+         {
+            int count=0;
+
+           for (i = 2; i <=Math.sqrt(j);i++)
+      {
+        if (j % i == 0)
+          {
+            count++;
+            break;
+          }
+      }
+           if (count == 0)
+      System.out.print(j+" ");
+         }      
+       cs.close();
+ }
+}
+==================================================================
+
+===================================================================
+class FibonacciSeries 
+{
+	public static void ProgramFibonacci(int a1,int a2,int a3,int count)
+	{
+		if(count>0)
+		{
+			a3 = a1 + a2;
+			a1 = a2;
+			a2 = a3;
+			System.out.print(" "+a3);
+		ProgramFibonacci(a1,a2,a3,count-1);
+		}
+	}
+	public static void main(String[] args) 
+		{
+		int count = 10;
+		int a1= 0;
+		int a2 = 1;
+		int a3 = 0;
+		System.out.println(a1+" "+a2);
+		ProgramFibonacci(a1,a2,a3,count-2);
+	    }
+}
+====================================================================
+class Composite
+{
+    public static void main(String args[])
+    {
+        Scanner sc= new Scanner(System.in);
+        int n,p,count=0;
+        System.out.println("Enter Number");
+        n= sc.nextInt(); // Input number from user
+        p=n; // store the entered number in "p" variable
+        for(int i=2;i<n;i++)
+        {
+            if(n%i==0) // checking factors of the number
+            {
+                count++;
+            }
+        }
+        if(count>2) // if factors are greater than 2
+        {
+            System.out.println("It is Composite Number : "+p);
+        }
+        else
+        {
+            System.out.println("It is not Composite Number : "+p);
+        }
+    } // end of main method
+} // end of class
+=================================================================
+import java.util.Scanner;
+public class Multiplication_Table 
+{
+    public static void main(String[] args) 
+    {
+        Scanner s = new Scanner(System.in);
+	System.out.print("Enter number:");        
+	int n=s.nextInt();
+        for(int i=1; i <= 10; i++)
+        {
+            System.out.println(n+" * "+i+" = "+n*i);
+        }
+    }
+}
+===================================================================
+import java.util.Scanner;  
+public class SmallestNumberExample1  
+{  
+public static void main(String[] args)   
+{  
+//object of the Scanner class  
+Scanner sc = new Scanner(System.in);  
+//reading input from the user  
+System.out.println("Enter the first number:");  
+int a = sc.nextInt();  
+System.out.println("Enter the second number:");  
+int b = sc.nextInt();  
+System.out.println("Enter the third number:");  
+int c = sc.nextInt();  
+//comparing a and b and storing the smallest number in a temp variable  
+int temp=a<b?a:b;  
+//comparing the temp variable with c and storing the result in the variable names smallest  
+int smallest=c<temp?c:temp;  
+//prints the smallest number  
+System.out.println("The smallest number is: "+smallest);  
+}  
+}  
+================================================================
+public class SmallestInThree {
+ 
+    public static void main(String[] args) {
+        //three numbers
+        int a = 20;
+        int b = 10;
+        int c = 30;
+         
+        int smallest;
+         
+        if(a<b && a<c) {
+            smallest = a;
+        } else if (b<c) {
+            smallest = b;
+        } else {
+            smallest = c;
+        }
+         
+        System.out.println(smallest + " is the smallest.");
+    }
+}
+================================================
+import java.util.*;
+class SmallerTw
+{
+  public static void main(String args[])
+  {
+     int num1,num2;
+     Scanner sc=new Scanner(System.in);
+     System.out.println("Enter The Two Numbers:");
+     num1=sc.nextInt();
+     num2=sc.nextInt();
+        if(num1<num2)
+           {
+              System.out.println(num1);              
+           }
+
+        else if(num2<num1)
+           {
+              System.out.println(num2);              
+           }
+
+      
+
+ }
+
+}
+===========================================
+// Java Program to Find largest of Two Numbers
+import java.util.Scanner;
+
+public class LargestofTwo {
+	private static Scanner sc;
+	public static void main(String[] args) 
+	{
+		int number1, number2;
+		sc = new Scanner(System.in);
+		
+		System.out.print(" Please Enter the First Number : ");
+		number1 = sc.nextInt();	
+		
+		System.out.print(" Please Enter the Second Number : ");
+		number2 = sc.nextInt();	
+		
+		if(number1 > number2) 
+	    {
+			System.out.println("\n The Largest Number = " + number1);          
+	    } 
+	    else if (number2 > number1)
+	    { 
+	    	System.out.println("\n The Largest Number = " + number2);        
+	    } 
+	    else 
+	    {
+	    	System.out.println("\n Both are Equal");
+	    }		
+	}	
+}
+================================================================
+import java.util.Scanner;  
+public class LargestNumberExample5  
+{  
+public static void main(String args[])  
+{  
+int num1, num2, num3;  
+System.out.println("Enter three integers: ");  
+Scanner in = new Scanner(System.in);  
+num1=in.nextInt();  
+num2=in.nextInt();  
+num3=in.nextInt();  
+if (num1 > num2 && num1 > num3)  
+System.out.println("The largest number is: "+num1);  
+else if (num2 > num1 && num2 > num3)  
+System.out.println("The largest number is: "+num2);  
+else if (num3 > num1 && num3 > num2)  
+System.out.println("The largest number is: "+num3);  
+else  
+System.out.println("The numbers are same.");  
+}  
+}  
+=================================================================
+class demo {  
+ public static void main(String arg[]) {  
+  System.out.println("Before swapping");  
+  int x = 10;  
+  int y = 20;  
+  System.out.println("value of x:" + x);  
+  System.out.println("value of y:" + y);  
+  System.out.println("After swapping");  
+  x = x + y;  
+  y = x - y;  
+  x = x - y;  
+  System.out.println("value of x:" + x);  
+  System.out.println("value of y:" + y);  
+ }  
+}   
+====================================================
+import java.util.*;  
+import java.io.*;  
+public class XylemPhloemExample  
+{  
+public static void main(String args[])  
+{  
+//the variable extreme_sum stores the sum of extreme digits   
+//the variable mean_sum stores the sum of mean digits   
+int num, extreme_sum = 0, mean_sum = 0, n;   
+Scanner sc= new Scanner (System.in);  
+System.out.print("Enter a number: ");  
+//reading an integer from the user  
+num = sc.nextInt();  
+//finds the absolute value of the given number  
+num = Math.abs(num);  
+//copying the given number into n  
+n = num;  
+//the while loop executes until the specified condition becomes false  
+while(n != 0)  
+{  
+//returns true if one of the conditions is true  
+if(n == num || n < 10)  
+//finds the last digit and add it to the variable extreme_sum  
+extreme_sum = extreme_sum + n % 10;  
+else  
+//finds the mean digits and add it to the variable mean_sum  
+mean_sum = mean_sum + n % 10;  
+//removes the last digit from the number  
+n = n / 10;  
+}  
+System.out.println("The sum of extreme digits: " + extreme_sum );  
+System.out.println("The sum of mean digits: " + mean_sum);  
+//comparing the sum of extreme digits and with the sum of mean digits  
+if(extreme_sum  == mean_sum)  
+//prints if sums are equal  
+System.out.println(num + " is a xylem number.");  
+else  
+//prints if sums are not equal  
+System.out.println(num + " is a phloem number.");  
+}  
+}  
+===============================================================
+public class Main
+{   
+    public static void main(String args[]) 
+    {   
+        int number = 502356997;
+        int firstDigit = 0;
+        int lastDigit = 0;
+ 
+        lastDigit = number%10;
+        System.out.println("Last digit: "+lastDigit);
+ 
+        while(number!=0) {
+            firstDigit = number%10;
+            number /= 10;
+        }
+        System.out.println("First digit: "+firstDigit);
+    }
+}
+=============================================================
+
+public class Leapyear
+{
+	public static void main(String[] args) 
+	{
+           int year=1900;
+	   boolean leap =false;
+	   if(year % 4==0)
+		{
+                   if(year % 100==0)
+			{
+			   if(year % 400==0)
+				   leap=true;
+			   else
+				   leap=false;
+			}
+		   else
+		      leap=true;
+		}
+	   else
+	   leap=false;
+			 
+          if(leap)
+		System.out.println(  year  +"  is a leap year .");
+	  else
+                System.out.println(  year  +"  is not a leap year .");
+	}
+}
+=======================================================================
